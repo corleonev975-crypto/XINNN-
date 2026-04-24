@@ -4,94 +4,125 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XINN AI</title>
-
-  <link rel="stylesheet" href="./style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="dark">
-
-<div class="app">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="logo-box">
-      <div class="logo">X</div>
-      <h2>XINN AI</h2>
-    </div>
-
-    <button class="new-chat">+ New Chat</button>
-
-    <div class="menu">
-      <p>Chat Terbaru</p>
-      <button class="active">💬 Cara membuat website...</button>
-      <button>💬 Ide bisnis digital</button>
-      <button>💬 Script login</button>
-    </div>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <!-- HEADER -->
-    <header class="header">
-      <div class="left">
-        <button id="menuBtn">☰</button>
-        <div class="mini-logo">X</div>
-        <b>XINN AI</b>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="side-brand">
+        <div class="logo big">X</div>
+        <h1>XINN AI</h1>
       </div>
 
-      <div class="right">
-        <button id="themeBtn">☾</button>
-        <button id="moreBtn">⋮</button>
+      <button class="new-chat">＋ New Chat</button>
+
+      <div class="recent">
+        <p>Chat Terbaru</p>
+        <button class="active">💬 Cara membuat website... <span>10:30</span></button>
+        <button>💬 Ide bisnis digital 2024 <span>Kemarin</span></button>
+        <button>💬 Script login Next.js <span>2 hari</span></button>
+        <button>💬 Bantu debug error <span>2 hari</span></button>
+        <button>💬 Database untuk pemula <span>3 hari</span></button>
       </div>
 
-      <!-- MENU TITIK 3 -->
-      <div id="moreMenu" class="dropdown">
+      <div class="bottom-menu">
+        <button>↺ Riwayat</button>
         <button>⚙ Pengaturan</button>
-        <button>🕘 Riwayat</button>
         <button>❔ Bantuan</button>
-        <button>🚪 Keluar</button>
+        <button>↪ Keluar</button>
       </div>
-    </header>
 
-    <!-- CHAT -->
-    <div id="chatBox" class="chat">
-
-      <div class="message user">
-        <div class="bubble user-bubble">
-          Cara membuat website simpel
-          <small>10:30 ✓✓</small>
+      <div class="profile">
+        <div class="logo small">X</div>
+        <div>
+          <b>XINN AI</b>
+          <small>● Online</small>
         </div>
       </div>
+    </aside>
 
-      <div class="message ai">
-        <div class="avatar">X</div>
-        <div class="bubble ai-bubble">
-          Berikut langkah membuat website sederhana...
+    <main class="main">
+      <header class="topbar">
+        <div class="top-left">
+          <button class="icon">☰</button>
+          <div class="logo mini">X</div>
+          <strong>XINN AI</strong>
+          <span>⌄</span>
         </div>
+
+        <div class="top-right">
+          <button id="themeBtn" class="circle">☾</button>
+          <button id="moreBtn" class="circle">⋮</button>
+        </div>
+
+        <div id="moreMenu" class="dropdown">
+          <button>⚙ Pengaturan</button>
+          <button>🕘 Riwayat</button>
+          <button>❔ Bantuan</button>
+          <button>🚪 Keluar</button>
+        </div>
+      </header>
+
+      <section id="chatBox" class="chat">
+        <div class="msg user">
+          <div class="bubble user-bubble">
+            Cara membuat website simpel<br />
+            dengan Next.js dan Tailwind CSS
+            <small>10:30 ✓✓</small>
+          </div>
+        </div>
+
+        <div class="msg ai">
+          <div class="avatar logo">X</div>
+          <div class="bubble ai-bubble">
+            <p>Berikut langkah membuat website simpel dengan Next.js dan Tailwind CSS:</p>
+
+            <h3>1. Buat Project Next.js</h3>
+            <pre><code>npx create-next-app@latest xinn-website
+cd xinn-website
+npm run dev</code><button>⧉</button></pre>
+
+            <h3>2. Install Tailwind CSS</h3>
+            <pre><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</code><button>⧉</button></pre>
+
+            <h3>3. Konfigurasi tailwind.config.js</h3>
+            <pre><code>module.exports = {
+  content: ["./pages/**/*.{js,ts,jsx,tsx}"],
+  theme: { extend: {} },
+  plugins: [],
+}</code><button>⧉</button></pre>
+
+            <p>Website kamu akan berjalan di <span>http://localhost:3000</span> 🚀</p>
+            <small>10:31</small>
+          </div>
+        </div>
+      </section>
+
+      <div class="quick">
+        <button>💡 Ide Bisnis</button>
+        <button>🐛 Debug Code</button>
+        <button>💻 Buat Website</button>
+        <button>📈 Strategi Cuan</button>
       </div>
 
-    </div>
+      <form id="chatForm" class="input-box">
+        <button type="button" id="plusBtn" class="plus">＋</button>
 
-    <!-- QUICK -->
-    <div class="quick">
-      <button>💡 Ide Bisnis</button>
-      <button>🐛 Debug Code</button>
-      <button>💻 Buat Website</button>
-      <button>📈 Strategi Cuan</button>
-    </div>
+        <div id="plusMenu" class="plus-menu">
+          <button type="button">📷 Kamera</button>
+          <button type="button">🖼 Foto</button>
+          <button type="button">📁 File</button>
+        </div>
 
-    <!-- INPUT -->
-    <form id="chatForm" class="input-box">
-      <button type="button" id="plusBtn">+</button>
-      <textarea placeholder="Ketik pesan kamu..."></textarea>
-      <button type="submit" class="send">↑</button>
-    </form>
+        <textarea id="userInput" rows="1" placeholder="Ketik pesan kamu..."></textarea>
+        <button class="send" type="submit">↑</button>
+      </form>
 
-  </main>
-</div>
+      <p class="note">XINN AI dapat membuat kesalahan. Pastikan untuk memeriksa informasi penting.</p>
+    </main>
+  </div>
 
-<script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
