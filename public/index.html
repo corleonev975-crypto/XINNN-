@@ -4,86 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XINN AI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body class="dark">
-  <div class="theme-pill"><span>🌙</span> Mode Gelap</div>
-  <div class="app-frame">
+  <div class="app">
+
+    <!-- SIDEBAR DESKTOP -->
     <aside class="sidebar">
-      <div class="side-logo orb">X</div>
-      <h1>XINN AI</h1>
-      <button class="new-chat" id="newChat">＋ New Chat</button>
-      <p class="label">Chat Terbaru</p>
-      <nav class="history" id="historyList">
-        <button class="active"><span>⌕</span><b>Cara membuat website...</b><small>10:30</small></button>
-        <button><span>⌕</span><b>Ide bisnis digital 2024</b><small>Kemarin</small></button>
-        <button><span>⌕</span><b>Script login Next.js</b><small>2 hari lalu</small></button>
-        <button><span>⌕</span><b>Bantu debug error</b><small>2 hari lalu</small></button>
-        <button><span>⌕</span><b>Database untuk pemula</b><small>3 hari lalu</small></button>
-      </nav>
-      <div class="side-bottom">
+      <div class="side-top">
+        <div class="big-logo">X</div>
+        <h1>XINN AI</h1>
+        <button class="new-chat">+ New Chat</button>
+      </div>
+
+      <div class="chat-list">
+        <p>Chat Terbaru</p>
+
+        <button class="chat-item active">
+          <span>💬</span>
+          <b>Cara membuat website...</b>
+          <small>10:30</small>
+        </button>
+
+        <button class="chat-item">
+          <span>💬</span>
+          <b>Ide bisnis digital 2024</b>
+          <small>Kemarin</small>
+        </button>
+
+        <button class="chat-item">
+          <span>💬</span>
+          <b>Script login Next.js</b>
+          <small>2 hari lalu</small>
+        </button>
+
+        <button class="chat-item">
+          <span>💬</span>
+          <b>Bantu debug error</b>
+          <small>2 hari lalu</small>
+        </button>
+      </div>
+
+      <div class="side-menu">
         <button>↻ Riwayat</button>
         <button>⚙ Pengaturan</button>
         <button>❔ Bantuan</button>
         <button>↪ Keluar</button>
       </div>
-      <div class="user-card"><div class="mini orb">X</div><div><strong>XINN AI</strong><p><i></i>Online</p></div></div>
+
+      <div class="profile-box">
+        <div class="small-logo">X</div>
+        <div>
+          <b>XINN AI</b>
+          <p><span></span> Online</p>
+        </div>
+      </div>
     </aside>
 
-    <main class="main-panel">
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- HEADER -->
       <header class="topbar">
-        <button class="hamb">☰</button>
-        <div class="title"><div class="tiny orb">X</div><strong>XINN AI</strong><span>⌄</span></div>
-        <button class="theme-toggle" id="themeToggle">☾</button>
+        <div class="left-head">
+          <button class="icon-btn menu-btn">☰</button>
+          <div class="mini-logo">X</div>
+          <strong>XINN AI</strong>
+          <span class="down">⌄</span>
+        </div>
+
+        <div class="right-head">
+          <button id="themeBtn" class="circle-btn">☾</button>
+          <button id="moreBtn" class="circle-btn">⋮</button>
+        </div>
+
+        <div id="moreMenu" class="more-menu">
+          <button>⚙ Pengaturan</button>
+          <button>🕘 Riwayat</button>
+          <button>❔ Bantuan</button>
+          <button>🚪 Keluar</button>
+        </div>
       </header>
 
-      <section class="messages" id="messages">
-        <div class="msg user seed">
-          <div class="bubble">Cara membuat website simpel<br>dengan Next.js dan Tailwind CSS <span class="time">10.30 ✓✓</span></div>
+      <!-- CHAT AREA -->
+      <section id="chatBox" class="chat-box">
+        <div class="message user">
+          <div class="bubble user-bubble">
+            Cara membuat website simpel<br />
+            dengan Next.js dan Tailwind CSS
+            <small>10.30 ✓✓</small>
+          </div>
         </div>
-        <div class="msg ai seed">
-          <div class="avatar orb">X</div>
-          <div class="answer-card">
+
+        <div class="message ai">
+          <div class="avatar">X</div>
+          <div class="bubble ai-bubble">
             <p>Berikut langkah membuat website simpel dengan Next.js dan Tailwind CSS:</p>
+
             <h3>1. Buat Project Next.js</h3>
-            <pre><button class="copy">□</button><small>bash</small><code>npx create-next-app@latest xinn-website
+            <pre><code>npx create-next-app@latest xinn-website
 cd xinn-website
-npm run dev</code></pre>
+npm run dev</code><button>⧉</button></pre>
+
             <h3>2. Install Tailwind CSS</h3>
-            <pre><button class="copy">□</button><small>bash</small><code>npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p</code></pre>
+            <pre><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</code><button>⧉</button></pre>
+
             <h3>3. Konfigurasi tailwind.config.js</h3>
-            <pre><button class="copy">□</button><small>js</small><code>module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}",
-  "./components/**/*.{js,ts,jsx,tsx}"],
+            <pre><code>module.exports = {
+  content: ["./pages/**/*.{js,ts,jsx,tsx}"],
   theme: { extend: {} },
   plugins: [],
-}</code></pre>
-            <h3>4. Import Tailwind di globals.css</h3>
-            <pre><button class="copy">□</button><small>css</small><code>@tailwind base;
-@tailwind components;
-@tailwind utilities;</code></pre>
+}</code><button>⧉</button></pre>
+
+            <p>Website kamu akan berjalan di <span class="link">http://localhost:3000</span> 🚀</p>
+            <small>10.31</small>
           </div>
         </div>
       </section>
 
-      <div class="bottom-area">
-        <div class="chips">
-          <button>💡 Ide Bisnis</button><button>🐛 Debug Code</button><button>💻 Buat Website</button><button>📈 Strategi Cuan</button>
-        </div>
-        <form class="composer" id="chatForm">
-          <button type="button" class="round">＋</button>
-          <button type="button" class="round globe">◎</button>
-          <textarea id="input" rows="1" placeholder="Ketik pesan kamu..."></textarea>
-          <button class="send" type="submit">↑</button>
-        </form>
-        <p class="note">XINN AI dapat membuat kesalahan. Pastikan untuk memeriksa informasi penting.</p>
+      <!-- QUICK ACTION -->
+      <div class="quick-actions">
+        <button>💡 Ide Bisnis</button>
+        <button>🐛 Debug Code</button>
+        <button>💻 Buat Website</button>
+        <button>📈 Strategi Cuan</button>
       </div>
+
+      <!-- INPUT -->
+      <form id="chatForm" class="chat-input">
+        <div class="plus-wrap">
+          <button type="button" id="plusBtn" class="plus-btn">+</button>
+
+          <div id="plusMenu" class="plus-menu">
+            <button type="button">📷 Kamera</button>
+            <button type="button">🖼 Foto</button>
+            <button type="button">📁 File</button>
+          </div>
+        </div>
+
+        <textarea id="userInput" placeholder="Ketik pesan kamu..." rows="1"></textarea>
+
+        <button type="submit" class="send-btn">↑</button>
+      </form>
+
+      <p class="warning">XINN AI dapat membuat kesalahan. Pastikan untuk memeriksa informasi penting.</p>
     </main>
   </div>
-  <script src="script.js"></script>
+
+  <script src="./script.js"></script>
 </body>
-</html>
+                                                  </html>
